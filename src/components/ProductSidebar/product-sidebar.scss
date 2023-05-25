@@ -1,0 +1,40 @@
+.product-sidebar {
+    color: #666666;
+
+    &__item {
+        font-size: 0.875em;
+        color: #666;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    &__item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    &__image {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    &__price {
+        margin-top: 15px;
+    }
+
+    &__actual-price {
+        color: #f3283c;
+        font-weight: 600;
+    }
+
+    &__old-price {
+        text-decoration: line-through;
+
+        margin-left: 10px;
+    }
+
+    &__message {
+        font-size: 0.875em;
+    }
+}

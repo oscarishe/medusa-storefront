@@ -1,0 +1,52 @@
+---
+import {dropdownProducts } from "../../../../public/assets/js/data";
+import DropdownMenu from "../../Menu/DropdownMenu/DropdownMenu.astro";
+import "./mobile-menu.scss";
+
+
+---
+
+<div class="mobile-menu">
+    <nav class="mobile-menu-nav">
+        <div class="mobile-menu__item">
+            <a href="/" class="mobile-menu__link">Главная</a>
+        </div>
+        <div class="mobile-menu__item">
+            <a href="/" class="mobile-menu__link">Магазин</a>
+        </div>
+        <div class="mobile-menu__item">
+            <a href="javascript:void(0)" class="mobile-menu__link"> Features</a>
+            <button
+                class="mobile-menu__collapse-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#submenu1"
+                aria-expanded="false"
+                aria-controls="submenu1"
+            >
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="collapse multi-collapse" id="submenu1">
+                <DropdownMenu direction="vertical" products={dropdownProducts} isStatic={true}/> 
+            </div>
+        </div>
+        <div class="mobile-menu__item">
+            <a href="/blogs" class="mobile-menu__link">Блоги</a>
+        </div>
+        <div class="mobile-menu__item">
+            <a href="/" class="mobile-menu__link">
+                <i class="fa-solid fa-warehouse"></i>
+                Теплицы
+            </a>
+        </div>
+        <div class="mobile-menu__item">
+            <a href="/" class="mobile-menu__link">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Бензопилы
+            </a>
+        </div>
+    </nav>
+    <div class="mobile-menu-backdrop"></div>
+</div>
+
+<script src="./mobileMenu.js"></script>

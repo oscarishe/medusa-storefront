@@ -1,0 +1,23 @@
+---
+import "./advantage-item.scss"
+interface Props {
+    imgSrc: string;
+    imgAlt: string;
+    title: string;
+    subtitle: string;
+}
+
+const { imgSrc, imgAlt, title, subtitle } = Astro.props;
+---
+
+<div class="advantage-item">
+    <div class="row">
+        <div class="col-5 text-center">
+            <img src={imgSrc} alt={imgAlt || ''} class="advantage-item__image" />
+        </div>
+        <div class="col-7 ps-0 d-flex flex-column justify-content-center">
+            <div class="advantage-item__title">{title}</div>
+            <div class="advantage-item__subtitle">{subtitle}</div>
+        </div>
+    </div>
+</div>

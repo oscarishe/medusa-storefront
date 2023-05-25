@@ -1,0 +1,41 @@
+---
+import { getOptions } from "../../../scripts/util/util";
+import { IProduct, IReview } from "../../../types/types";
+import Reviews from "../../Reviews/Reviews.astro";
+import Specification from "../../Specification/Specification.astro";
+import "./product-card-details.scss";
+
+interface Props {
+    product: any;
+    reviews: IReview[];
+}
+
+const { product, reviews } = Astro.props;
+const specification = getOptions(product);
+---
+
+<div class="product-details">
+    <div class="product-details__navigation">
+        <a href="javascript:void(0)" data-target="details" class="product-details__link active">Детали</a>
+        <a href="javascript:void(0)" data-target="specification" class="product-details__link">Характеристики</a>
+        <a href="javascript:void(0)" data-target="reviews" class="product-details__link">Отзывы <span class="color-gray">({reviews.length})</span></a>
+        <a href="javascript:void(0)" data-target="one-more" class="product-details__link">Еще одна секция</a>
+    </div>
+    <div class="product-details__container">
+        <div class="product-details__item active" id="details">
+            <div class="product-details__description">
+                {product.description}
+            </div>
+        </div>
+        <div class="product-details__item" id="specification">
+            <Specification specification={specification} />
+        </div>
+        <div class="product-details__item" id="reviews">
+            <Reviews reviews={reviews} product = {product.title}/>
+        </div>
+        <div class="product-details__item" id="one-more">
+        </div>
+    </div>
+</div>
+
+<script src='./productCardDetails.js'></script>

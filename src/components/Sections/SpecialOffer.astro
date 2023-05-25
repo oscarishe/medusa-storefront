@@ -1,0 +1,40 @@
+---
+import SectionTitle from "../SectionTitle/SectionTitle.astro";
+import SpecialOfferItem from "../SpecialOffer/SpecialOfferItem.astro";
+
+const specialOffer = {
+    link: "#",
+    title: "Теплица сибирская Мини",
+    images: [
+        "/assets/images/specialOffer/so1.jpg",
+        "/assets/images/specialOffer/so1.jpg",
+        "/assets/images/specialOffer/so1.jpg",
+    ],
+    price: 777,
+    oldPrice: 879,
+    grade: 4,
+    description:
+        "Lorem Ipsum - это текст-рыба, часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной рыбой для текстов на латинице с начала XVI века.",
+};
+---
+
+<section class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <SectionTitle text="Предложения дня" />
+            </div>
+            <div class="col-xl-7 col-lg-8 mt-4">
+                <SpecialOfferItem
+                    link={specialOffer.link}
+                    title={specialOffer.title}
+                    images={specialOffer.images}
+                    price={specialOffer.price}
+                    oldPrice={specialOffer.oldPrice}
+                    grade={specialOffer.grade}
+                    description={specialOffer.description}
+                />
+            </div>
+        </div>
+    </div>
+</section>

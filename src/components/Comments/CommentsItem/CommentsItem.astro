@@ -1,0 +1,27 @@
+---
+import './comments-item.scss';
+interface Props {
+    id: number;
+    text: string;
+}
+
+const {id, text} = Astro.props;
+const date = new Date().toISOString().slice(0, 10);;
+---
+
+<div class="comments-item">
+    <div class="row">
+        <div class="col-lg-2 col-sm-3 col-4 d-flex flex-column align-items-center justify-content-center">
+            <i class="comments-item__icon fa-solid fa-user-tie"></i>
+            <div class="comments-item__title">User {id}</div>
+        </div>
+        <div class="col-lg-10 col-sm-9 col-8 pe-4">
+            <p class="comments-item__text">
+                {text}
+            </p>
+            <div class="comments-item__date">
+                {date}
+            </div>
+        </div>
+    </div>
+</div>

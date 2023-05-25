@@ -1,0 +1,21 @@
+.review-item {
+    padding: 30px 0;
+    color: #666666;
+    border-bottom: 1px solid #c9c9c9;
+
+    &__title {
+        font-size: 1.125em;
+        line-height: 1;
+        margin-bottom: 30px;
+    }
+    &__grade {
+        font-size: 0.875em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    &__text {
+        font-size: 0.875em;
+    }
+}

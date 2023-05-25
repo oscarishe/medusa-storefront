@@ -1,0 +1,15 @@
+---
+import './categories-products.scss';
+
+import CategoriesProductHeader from './CategoriesProductHeader/CategoriesProductHeader.astro';
+import CategoriesProductContainer from './CategoriesProductContainer/CategoriesProductContainer.astro';
+import { medusaApi } from '../../scripts/api/medusa';
+const products = await medusaApi.getProducts();
+---
+
+<div class="categories__content">
+    <CategoriesProductHeader />
+    <CategoriesProductContainer products={products} type="grid"/>
+</div>
+
+<script src='./categoriesProducts.js'></script>

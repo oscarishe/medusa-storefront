@@ -1,0 +1,233 @@
+---
+import "./filters.scss";
+---
+
+<div class="filters">
+    <form id="filters">
+        <div class="filters__section">
+            <div class="filters__title">Цена</div>
+            <div class="filters__range" id="price-range"></div>
+            <div class="filters__range-section">
+                <label>
+                    <span>От</span>
+                    <input
+                        type="number"
+                        name="price-range-from"
+                        id="price-range-from"
+                        value="0"
+                    />
+                </label>
+                <label>
+                    <span>До</span>
+                    <input
+                        type="number"
+                        name="price-range-to"
+                        id="price-range-to"
+                        value="1500"
+                    />
+                </label>
+            </div>
+        </div>
+        <div class="filters__section">
+            <div class="filters__title">Цвет</div>
+            <div class="filters__flex-container">
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="color"
+                        value="Черный"
+                    />
+                    <span>
+                        <i style="background-color:black"></i>
+                    </span>
+                </label>
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="color"
+                        value="Белый"
+                    />
+                    <span>
+                        <i style="background-color:white"></i>
+                    </span>
+                </label>
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="color"
+                        value="Синий"
+                    />
+                    <span>
+                        <i style="background-color:blue"></i>
+                    </span>
+                </label>
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="color"
+                        value="Красный"
+                    />
+                    <span>
+                        <i style="background-color:red"></i>
+                    </span>
+                </label>
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="color"
+                        value="Зеленый"
+                    />
+                    <span>
+                        <i style="background-color:green"></i>
+                    </span>
+                </label>
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="color"
+                        value="Желтый"
+                    />
+                    <span>
+                        <i style="background-color:yellow"></i>
+                    </span>
+                </label>
+            </div>
+        </div>
+        <div class="filters__section">
+            <div class="filters__title">Тип товара</div>
+            <label class="filters__label filters__label_text">
+                <input
+                    class="filters__radio"
+                    type="radio"
+                    name="type"
+                    value="Теплица"
+                />
+                <span>Теплица (15)</span>
+            </label>
+            <label class="filters__label filters__label_text">
+                <input
+                    class="filters__radio"
+                    type="radio"
+                    name="type"
+                    value="Беседка"
+                />
+                <span>Беседка (9)</span>
+            </label>
+            <label class="filters__label filters__label_text">
+                <input
+                    class="filters__radio"
+                    type="radio"
+                    name="type"
+                    value="Поликарбонат"
+                />
+                <span>Поликарбонат (6)</span>
+            </label>
+            <label class="filters__label filters__label_text">
+                <input
+                    class="filters__radio"
+                    type="radio"
+                    name="type"
+                    value="Бензопила"
+                />
+                <span>Бензопила (11)</span>
+            </label>
+        </div>
+        <div class="filters__section">
+            <div class="filters__title">Длина</div>
+            <div class="filters__flex-container">
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="length"
+                        value="2"
+                    />
+                    <span> 2 м.</span>
+                </label>
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="length"
+                        value="4"
+                    />
+                    <span> 4 м.</span>
+                </label>
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="length"
+                        value="6"
+                    />
+                    <span> 6 м.</span>
+                </label>
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="length"
+                        value="8"
+                    />
+                    <span> 8 м.</span>
+                </label>
+                <label class="filters__label">
+                    <input
+                        class="filters__radio"
+                        type="radio"
+                        name="length"
+                        value="10"
+                    />
+                    <span> 10 м.</span>
+                </label>
+            </div>
+        </div>
+        <div class="filters__section">
+            <div class="filters__title">Производитель</div>
+            <label class="filters__label filters__label_text">
+                <input
+                    class="filters__radio"
+                    type="radio"
+                    name="producer"
+                    value="Производитель 1"
+                />
+                <span>Производитель 1 (5)</span>
+            </label>
+            <label class="filters__label filters__label_text">
+                <input
+                    class="filters__radio"
+                    type="radio"
+                    name="producer"
+                    value="Производитель 2"
+                />
+                <span>Производитель 2 (12) </span>
+            </label>
+            <label class="filters__label filters__label_text">
+                <input
+                    class="filters__radio"
+                    type="radio"
+                    name="producer"
+                    value="Производитель 3"
+                />
+                <span>Производитель 3 (14)</span>
+            </label>
+            <label class="filters__label filters__label_text">
+                <input
+                    class="filters__radio"
+                    type="radio"
+                    name="producer"
+                    value="Производитель 4"
+                />
+                <span>Производитель 4 (3)</span>
+            </label>
+        </div>
+    </form>
+</div>
+
+<script src="./filters.js"></script>

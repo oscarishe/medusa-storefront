@@ -1,0 +1,35 @@
+---
+import Banners from "../components/Sections/Banners.astro";
+import Main from "../components/Sections/Main.astro";
+import PopularCategories from "../components/Sections/PopularCategories.astro";
+import Products from "../components/Sections/Products.astro";
+import Layout from "../layouts/Layout.astro";
+import { bannersDouble, bannersTriple} from "../../public/assets/js/data";
+import SpecialOffer from "../components/Sections/SpecialOffer.astro";
+import BlogsMain from "../components/Sections/BlogsMain.astro";
+import Advantages from "../components/Sections/Advantages.astro";
+import {medusaApi} from "../scripts/api/medusa";
+
+const products = await medusaApi.getProducts();
+const categories = await medusaApi.getCategories();
+---
+
+<Layout title="Welcome to Astro.">
+    <Main />
+    <PopularCategories categories={categories} />
+    <Banners banners={bannersDouble} />
+    <Products
+        title="Новые поступления"
+        products={products}
+        categories={categories}
+    />
+    <Banners banners={bannersTriple} />
+    <SpecialOffer />
+    <Products
+        title="Специальные товары"
+        products={products}
+        categories={categories}
+    />
+    <BlogsMain />
+    <Advantages />
+</Layout>

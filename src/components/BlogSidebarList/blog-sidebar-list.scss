@@ -1,0 +1,31 @@
+.blog-sidebar-list {
+    font-size: 0.875em;
+    color: #444444;
+    padding-left: 1em;
+
+    &__link {
+        color: #444444;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+    }
+
+    &_bordered {
+        padding: 10px 20px;
+        border: 1px solid #ddd;
+        margin: 0;
+        list-style: none;
+
+        .blog-sidebar-list {
+            &__item {
+                margin: 0;
+                padding: 8px 0;
+            }
+
+            &__item:not(:last-child) {
+                border-bottom: 1px solid #ddd;
+            }
+        }
+    }
+}

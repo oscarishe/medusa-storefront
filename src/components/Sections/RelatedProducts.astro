@@ -1,0 +1,33 @@
+---
+import { medusaApi } from "../../scripts/api/medusa";
+import ProductItemCard from "../ProductItem/ProductItemCard/ProductItemCard.astro";
+import SwiperNavigation from "../Swiper/Navigation/SwiperNavigation.astro";
+import RelatedProductsSwiper from "../Swiper/RelatedProductsSwiper.astro";
+const products = await medusaApi.getProducts();
+---
+
+<section class="related-products">
+    <div class="container">
+        <div class="related-products__header">
+            <div class="row">
+                <div class="col-xl-11 col-sm-10 col-8">
+                    <div class="related-products__title">
+                        Рекомендуемые продукты
+                    </div>
+                </div>
+                <div class="col-xl-1 col-sm-2 col-4 d-flex align-items-center justify-contend-end">
+                    <SwiperNavigation element="related-products-nav" />
+                </div>
+            </div>
+        </div>
+        <RelatedProductsSwiper>
+            {
+                products.map((item) => (
+                    <div class="swiper-slide">
+                        <ProductItemCard product={item} />
+                    </div>
+                ))
+            }
+        </RelatedProductsSwiper>
+    </div>
+</section>

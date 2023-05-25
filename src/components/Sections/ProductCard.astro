@@ -1,0 +1,27 @@
+---
+import { reviews } from "../../../public/assets/js/data";
+import CarouselPagination from "../Carousel/CarouselPagination.astro";
+import ProductCardDetails from "../ProductCard/ProductCardDetails/ProductCardDetails.astro";
+import ProductCardInfo from "../ProductCard/ProductCardInfo/ProductCardInfo.astro";
+
+interface Props {
+    product: any,
+}
+const { product } = Astro.props;
+const { images } = product;
+const reviewsCount = reviews.length;
+---
+
+<section class="product-card">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-md-5 col-12 mb-3">
+                <CarouselPagination images={images} isControlsActive={true} paginationType="horizontal"/>
+            </div>
+            <div class="col-xl-8 col-md-7 col-12 mb-3">
+                <ProductCardInfo product={product} reviewsCount={reviewsCount}/>
+            </div>
+        </div>
+        <ProductCardDetails reviews = {reviews} product = {product}/>
+    </div>
+</section>

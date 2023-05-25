@@ -1,0 +1,37 @@
+---
+import { blogs } from "../../../public/assets/js/data";
+import BlogItem from "../BlogItem/BlogItem.astro";
+import SectionTitle from "../SectionTitle/SectionTitle.astro";
+import BlogSwiper from "../Swiper/BlogSwiper.astro";
+import SwiperNavigation from "../Swiper/Navigation/SwiperNavigation.astro";
+---
+
+<section class="blogs-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-11 col-sm-10 col-4">
+                <SectionTitle text="Блог" />
+            </div>
+            <div class="col-xl-1 col-sm-2 col-8">
+                <SwiperNavigation element="blogs-nav" />
+            </div>
+        </div>
+        <div class="mt-4">
+            <BlogSwiper>
+                {blogs.map(item => (
+                    <BlogItem   
+                    imgSrc={item.imgSrc}
+                    imgAlt={item.imgAlt}
+                    title={item.title}
+                    date={item.date}
+                    author={item.author}
+                    id={item.id}
+                    modifier="swiper"
+                    description={item.description}
+                    />
+                ))}
+               
+            </BlogSwiper>
+        </div>
+    </div>
+</section>

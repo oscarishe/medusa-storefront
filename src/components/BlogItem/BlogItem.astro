@@ -1,0 +1,45 @@
+---
+import './blog-item.scss'
+interface Props {
+    id: number;
+    imgSrc: string;
+    imgAlt: string;
+    title: string;
+    date: string;
+    author: string;
+    description: string;
+    modifier?: string;
+}
+
+const { imgSrc, imgAlt, title, date, author, id, description, modifier } = Astro.props;
+const itemClass = modifier ? `blog-item blog-item_${modifier}` : `blog-item`;
+---
+
+<div class="swiper-slide">
+    <div class={itemClass}>
+        <a href={`/blogs/${id}`}>
+            <img src={imgSrc} alt={imgAlt} class="blog-item__image" />
+        </a>
+        <div class="blog-item__info">
+            <div class="blog-item__date">
+                <i class="blog-item__icon fa-regular fa-calendar-days"></i>
+                {date}
+            </div>
+            <div class="blog-item__author">
+                <span class="blog-item__text">Author: </span>
+                <i class="blog-item__icon fa-regular fa-user"></i>
+                <span>{author}</span>
+            </div>
+        </div>
+        <a class="blog-item__title" href={`/blogs/${id}`}>
+            {title}
+        </a>
+        <p class="blog-item__description">
+            {description}
+        </p>
+        <a href={`/blogs/${id}`} class="blog-item__link">
+            Подробнее
+            <i class="fa-regular fa-square-plus"></i>
+        </a>
+    </div>
+</div>

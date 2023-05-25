@@ -1,0 +1,62 @@
+---
+import { IBlog } from "../../types/types";
+import Comments from "../Comments/Comments.astro";
+import SocialLink from "../SocialLink/SocialLink.astro";
+import "./blog-content.scss";
+interface Props {
+    blog: IBlog;
+    maxId: number;
+    minId: number;
+}
+
+const { author, categories, imgSrc, imgAlt, description, text, id } = Astro.props.blog;
+const {maxId, minId} = Astro.props;
+const isPreviuosActive = id > minId;
+const isNextActive = id < maxId;
+---
+
+<div class="blog-content">
+    <div class="blog-content__header">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-end">
+                <SocialLink link="" social="facebook" modifier="small" />
+                <SocialLink link="" social="instagram" modifier="small" />
+                <SocialLink link="" social="youtube" modifier="small" />
+                <SocialLink link="" social="viber" modifier="small" />
+                <SocialLink link="" social="telegram" modifier="small" />
+            </div>
+            <div class="col-12 d-sm-flex">
+                <div class="blog-content__info">
+                    Автор:
+                    <a href="#" class="blog-content__info_author">{author}</a>
+                </div>
+                <div class="blog-content__info">
+                    Категории:
+                    {
+                        categories.map((item, index) => (
+                            <a href={item.name}>
+                                {item.text}
+                                {index !== categories.length - 1 && ","}
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-content__main">
+        <img src={imgSrc} alt={imgAlt} class="blog-content__image">
+        <p class="blog-content__text">
+            {text}
+        </p>
+        <div class="row">
+            <div class="col-6 text-start">
+                {isPreviuosActive && <a class="blog-content__link" href={(id-1).toString()}><i class="fa-solid fa-arrow-left"></i> Пред.</a>}
+            </div>
+            <div class="col-6 text-end">
+                {isNextActive && <a class="blog-content__link" href={(id+1).toString()}>След. <i class="fa-solid fa-arrow-right"></i></a>}
+            </div>
+        </div>
+    </div>
+    <Comments />
+</div>

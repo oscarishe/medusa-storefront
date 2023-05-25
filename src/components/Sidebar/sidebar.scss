@@ -1,0 +1,30 @@
+.sidebar {
+    margin-bottom: 30px;
+    color: #666666;
+    &__header {
+        background-color: #3399FE;
+        color: #FFF;
+        line-height: 1;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.125em;
+        padding: 20px;
+        border-radius: 5px 5px 0 0;
+    }
+
+    &__content {
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+    }
+
+    &__title {
+        color: #444444;
+    }
+
+    &__icon {
+        margin-right: 7.5px;
+    }
+
+}

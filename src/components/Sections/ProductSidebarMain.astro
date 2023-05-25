@@ -1,0 +1,30 @@
+---
+import {medusaApi} from "../../scripts/api/medusa";
+import ProductSidebarContent from "../ProductSidebar/ProductSidebarContent.astro";
+import Sidebar from "../Sidebar/Sidebar.astro";
+import ProductCard from "./ProductCard.astro";
+
+interface Props {
+    product: any;
+}
+const { product } = Astro.props; 
+const products = await medusaApi.getProducts();
+---
+
+<section class="product-sidebar-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 order-lg-0 order-1">
+                <Sidebar title="Популярное">
+                    <ProductSidebarContent products={products}/>
+                </Sidebar>
+                <Sidebar title="Товары для сравнения">
+                    <ProductSidebarContent products={[]} />
+                </Sidebar>
+            </div>
+            <div class="col-lg-9 col-12 order-lg-1 order-0">
+                <ProductCard product={product}/>
+            </div>
+        </div>
+    </div>
+</section>

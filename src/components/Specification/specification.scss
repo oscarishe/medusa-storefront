@@ -1,0 +1,16 @@
+.product-specification {
+    list-style: none;
+    padding: 0;
+    font-size: 0.875em;
+    color: #666666;
+    &__text {
+        padding-top: 4px;
+        padding-bottom: 12.5px;
+    }
+
+    &__text:first-child {
+        padding-right: 35px;
+        font-weight: 700;
+    }
+
+}

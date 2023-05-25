@@ -1,0 +1,35 @@
+---
+
+import { ICategory } from "../../types/types";
+import PopularItem from "../PopularItem/PopularItem.astro";
+import SectionTitle from "../SectionTitle/SectionTitle.astro";
+import SwiperNavigation from "../Swiper/Navigation/SwiperNavigation.astro";
+import ProductsSwiper from "../Swiper/ProductsSwiper.astro";
+
+interface Props {
+    categories: any;
+}
+
+let { categories } = Astro.props;
+
+categories = [...categories, ...categories];
+---
+
+<section class="popular-categories">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-11 col-sm-10 col-8">
+                <SectionTitle text="Популярные категории" />
+            </div>
+            <div class="col-xl-1 col-sm-2 col-4">
+                <SwiperNavigation element="products-swiper-nav" />
+            </div>
+            <ProductsSwiper>
+                {categories.map(item => (
+                    <PopularItem imgSrc={item.img || '/assets/images/products/product1.jpg'} name={item.title} link={item.handle} count={10}/>
+
+                ))}
+            </ProductsSwiper>
+        </div>
+    </div>
+</section>

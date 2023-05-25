@@ -1,0 +1,88 @@
+---
+import "./carouselPagination.scss";
+
+interface Props {
+    images: any[];
+    isControlsActive: boolean;
+    paginationType: string;
+}
+
+const { images, isControlsActive, paginationType } = Astro.props;
+let carouselContainerClass = "";
+let paginationContainerClass = "";
+if (paginationType === "vertical") {
+    carouselContainerClass = "col-sm-9 col-12";
+    paginationContainerClass = "col-sm-3 col-12 px-0";
+}
+if (paginationType === "horizontal") {
+    carouselContainerClass = "col-12";
+    paginationContainerClass = "col-12 mt-3";
+}
+---
+
+<div
+    class={`carousel slide carousel_pagination ${paginationType}`}
+    data-bs-ride="carousel"
+    data-bs-interval="60000"
+>
+    <div class="row h-100">
+        <div class={carouselContainerClass}>
+            <div class="carousel-content">
+                <div class="carousel-inner">
+                    {
+                        images.map((item, index) => (
+                            <div
+                                class={
+                                    index == 0
+                                        ? "carousel-item active"
+                                        : "carousel-item"
+                                }
+                            >
+                                <img src={item.url || item} />
+                            </div>
+                        ))
+                    }
+                </div>
+                {
+                    isControlsActive && (
+                        <div class="carousel-buttons">
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-slide="prev"
+                            >
+                                <i class="fa-solid fa-chevron-left" />
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-slide="next"
+                            >
+                                <i class="fa-solid fa-chevron-right" />
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    )
+                }
+            </div>
+        </div>
+        <div class={paginationContainerClass}>
+            <div class={`carousel-indicators ${paginationType}`}>
+                {
+                    images.map((item, index) => (
+                        <button
+                            type="button"
+                            data-bs-slide-to={index}
+                            class={index == 0 ? "active" : ""}
+                        >
+                            <img src={item.url || item} />
+                        </button>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./carousel.js"></script>

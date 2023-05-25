@@ -1,0 +1,12 @@
+
+<div class="blogs-swiper swiper">
+    <div class="swiper-wrapper">
+        <slot />
+    </div>
+</div>
+
+<script>
+    import initSwiper from './swiper';
+    import { blogsSwiperConfig } from './config';
+    initSwiper('.blogs-swiper', blogsSwiperConfig);
+</script>

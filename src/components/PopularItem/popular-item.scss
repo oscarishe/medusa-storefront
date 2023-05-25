@@ -1,0 +1,24 @@
+.popular-item {
+    text-align: center;
+
+    &__title {
+        color: #222;
+    }
+
+    &__image {
+        max-width: 100%;
+    }
+
+    &:hover &__image {
+        opacity: .8;
+    }
+
+    &:hover &__title {
+        font-weight: 700;
+    }
+
+    &__counter {
+        color: #666666;
+        font-size: 0.8125em;
+    }
+}

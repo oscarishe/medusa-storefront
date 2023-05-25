@@ -1,0 +1,26 @@
+---
+interface Props {
+    currentPage: string;
+    title?:string;
+}
+
+import "./breadcrumbs.scss";
+
+const { currentPage, title } = Astro.props;
+---
+
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-wrapper">
+            {title && <h2 class="breadcrumbs__title">{title}</h2>}
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        {currentPage}
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>

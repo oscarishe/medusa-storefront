@@ -1,0 +1,132 @@
+.categories {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+        row-gap: 15px;
+    }
+
+    &__container {
+        padding-bottom: 30px;
+        margin-bottom: 0;
+
+        &_grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-top: 25px;
+            gap: 20px;
+            border-bottom: 1px solid #ddd;
+
+            .product-item-list {
+                display: none;
+            }
+        }
+
+        &_list {
+            .product-item-card {
+                display: none;
+            }
+        }
+
+    }
+
+    &__section {
+        display: flex;
+        column-gap: 5px;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+    }
+
+    &__text {
+        line-height: 1;
+        font-size: 0.75em;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        border: 1px solid #ddd;
+        color: #7d7d7d;
+        border-radius: 5px;
+        background: #FFF;
+        transition: 0.25s;
+
+        &:hover, &.active {
+            background-color: #3399FE;
+            border-color: #3399FE;
+            color: #FFF;
+        }
+
+        &_no-border {
+            border: none;
+
+            &:hover {
+                color: #000;
+                background: transparent;
+            }
+        }
+    }
+
+    &__select {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px 20px 5px 5px;
+        min-width: 110px;
+        font-size: 0.75em;
+        outline: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+        background-size: 0.8rem;
+    }
+}
+
+@media (min-width:450px) {
+    .categories__container_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:576px) {
+    .categories {
+        &__container {
+            margin-bottom: 100px;
+        }
+
+        &__header {
+            flex-wrap: nowrap;
+        }
+
+        &__section {
+            width: auto;
+            justify-content: flex-start;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .categories__container_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:991px) {
+    .categories__container_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// @media (min-width:1200px) {
+//     .categories__container {
+//         grid-template-columns: repeat(5, 1fr);
+//     }
+// }

@@ -1,0 +1,14 @@
+---
+
+import ProductSidebarItem from "./ProductSidebarItem/ProductSidebarItem.astro";
+import "./product-sidebar.scss";
+interface Props {
+    products: any[];
+}
+
+const { products } = Astro.props;
+---
+
+<div class="product-sidebar">
+    {!products.length ? <div class="product-sidebar__message">Товары отсутствуют</div> : products.slice(0,3).map(item => <ProductSidebarItem product={item}/>)}
+</div>

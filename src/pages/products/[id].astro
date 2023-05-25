@@ -1,0 +1,17 @@
+---
+
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.astro";
+import RelatedProducts from "../../components/Sections/RelatedProducts.astro";
+import ProductSidebarMain from "../../components/Sections/ProductSidebarMain.astro";
+import {medusaApi} from "../../scripts/api/medusa";
+const { id } = Astro.params;
+const product = await medusaApi.getProductByHandle(id);
+if (!product) return Astro.redirect('/404');
+---
+
+<Layout title={product.title}>
+    <Breadcrumbs currentPage={product.title} />
+    <ProductSidebarMain product={product} />
+    <RelatedProducts />
+</Layout>

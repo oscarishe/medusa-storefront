@@ -1,0 +1,49 @@
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 1.125em;
+    color: #FFF;
+    transition: 0.3s;
+
+    &_facebook {
+        background: #305594;
+    }
+
+    &_twitter {
+        background: #28b3ff;
+    }
+
+    &_instagram {
+        background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    }
+
+    &_youtube {
+        background: #FF0000;
+    }
+
+    &_viber {
+        background: #8f5db7;
+    }
+
+    &_telegram {
+        background: #0088cc;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        background: #3399FE;
+        color: #FFF;
+    }
+    &_small {
+        width: 16px;
+        height: 16px;
+        font-size: 0.625em;
+        margin-right: 5px;
+    }
+}

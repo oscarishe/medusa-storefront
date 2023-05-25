@@ -1,0 +1,13 @@
+---
+import './swiper-navigation.scss';
+interface Props {
+    element: string,
+}
+
+const { element } = Astro.props;
+---
+
+<div class="swiper-navigation">
+    <button class={`${element} swiper-nav swiper-prev`}><i class="fa-solid fa-chevron-left"></i></button>
+    <button class={`${element} swiper-nav swiper-next`}><i class="fa-solid fa-chevron-right"></i></button>
+</div>

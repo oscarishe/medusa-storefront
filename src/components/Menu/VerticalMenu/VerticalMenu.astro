@@ -1,0 +1,59 @@
+---
+import { dropdownProducts } from "../../../../public/assets/js/data";
+import DropdownMenu from "../DropdownMenu/DropdownMenu.astro";
+import "./vertical-menu.scss";
+---
+
+<div class="vertical-menu">
+    <div class="vertical-menu__header">
+        <div class="vertical-menu__text">
+            <i class="vertical-menu__icon fa-solid fa-bars"></i>
+            Все категории
+        </div>
+        <button class="vertical-menu__open-button"
+            ><i class="fa-solid fa-chevron-down"></i></button
+        >
+    </div>
+    <div class="vertical-menu__container">
+        <div class="vertical-menu__item">
+            <a class="vertical-menu__link">
+                <i class="vertical-menu__icon fa-solid fa-warehouse"></i>
+                <span class="vertical-menu__link-text">Теплицы</span>
+            </a>
+        </div>
+        <div class="vertical-menu__item">
+            <a class="vertical-menu__link">
+                <i class="vertical-menu__icon fa-solid fa-warehouse"></i>
+                <span class="vertical-menu__link-text">Теплицы</span>
+            </a>
+        </div>
+        <div class="vertical-menu__item vertical-menu__item_dropdown">
+            <a class="vertical-menu__link">
+                <i class="vertical-menu__icon fa-solid fa-warehouse"></i>
+                <span class="vertical-menu__link-text">Теплицы</span>
+            </a>
+            <i class="vertical-menu__icon fa-solid fa-chevron-right"></i>
+            <DropdownMenu products={dropdownProducts} direction="vertical"/>
+        </div>
+        <div class="vertical-menu__item hidden">
+            <a class="vertical-menu__link">
+                <i class="vertical-menu__icon fa-solid fa-warehouse"></i>
+                <span class="vertical-menu__link-text">Теплицы</span>
+            </a>
+        </div>
+        <div class="vertical-menu__item hidden">
+            <a class="vertical-menu__link">
+                <i class="vertical-menu__icon fa-solid fa-warehouse"></i>
+                <span class="vertical-menu__link-text">Теплицы</span>
+            </a>
+        </div>
+        <div class="vertical-menu__item vertical-menu__item_more-button">
+            <a class="vertical-menu__link vertical-menu__link_more-button" href="javascript:void(0)">
+                <span class="vertical-menu__link-text">Открыть категории</span>
+                <i class="fa-regular fa-square-plus"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="./verticalMenu.js"></script>

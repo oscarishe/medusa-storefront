@@ -1,0 +1,32 @@
+.breadcrumbs {
+    &-wrapper {
+        width: 100%;
+        padding: 60px 0;
+        text-align: center;
+        margin: 60px 0 30px;
+        background-image: url('/assets/images/breadcrumbs/back.jpg');
+        border-radius: 5px;
+        max-height: 155px;
+    }
+    &__title {
+        font-size: 1.25em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color:#FFF;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .breadcrumb {
+        font-size: 0.875em;
+        justify-content: center;
+        color: #fff;
+
+        a,
+        a.active,
+        .breadcrumb-item.active,
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: #fff;
+        }
+    }
+}

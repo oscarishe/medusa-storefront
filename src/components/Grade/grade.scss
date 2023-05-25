@@ -1,0 +1,11 @@
+.grade {
+    display: flex;
+
+    i {
+        color: #c7c7c7;
+
+        &.marked {
+            color: #ffc000;
+        }
+    }
+}

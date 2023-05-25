@@ -1,0 +1,271 @@
+---
+import Grade from "../../Grade/Grade.astro";
+import "./review-form.scss";
+interface Props {
+    product: string;
+}
+
+const { product } = Astro.props;
+---
+
+<form class="review-form">
+    <div class="review-form__title">Оставить отзыв на:</div>
+    <div class="review-form__title fw-bold">{product}</div>
+    <div class="review-form__body">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="review-form__label">Ваша оценка </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="review-form-grade">
+                    <div class="review-form-grade__item">
+                        <div class="review-form-grade__text">Качество</div>
+                        <div class="review-form-grade__container">
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="quality"
+                                    value="1"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {1} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="quality"
+                                    value="2"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {2} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="quality"
+                                    value="3"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {3} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="quality"
+                                    value="4"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {4} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="quality"
+                                    value="5"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {5} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="review-form-grade__item">
+                        <div class="review-form-grade__text">Доставка</div>
+                        <div class="review-form-grade__container">
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="delivery"
+                                    value="1"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {1} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="delivery"
+                                    value="2"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {2} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="delivery"
+                                    value="3"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {3} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="delivery"
+                                    value="4"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {4} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="delivery"
+                                    value="5"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {5} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="review-form-grade__item">
+                        <div class="review-form-grade__text">Цена</div>
+                        <div class="review-form-grade__container">
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="price"
+                                    value="1"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {1} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="price"
+                                    value="2"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {2} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="price"
+                                    value="3"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {3} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="price"
+                                    value="4"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {4} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                            <label class="review-form-grade__label">
+                                <i
+                                    class="review-form-grade__icon fa-solid fa-star"
+                                ></i>
+                                <input
+                                    class="review-form-grade__input"
+                                    type="radio"
+                                    name="price"
+                                    value="5"
+                                />
+                                <div class="review-form-grade__selected-elem">
+                                    <Grade grade = {5} isEmptyStars={true}/>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="review-form__label">Имя </div>
+            </div>
+            <div class="col-sm-9">
+                <input class="review-form__input" type="text" name="name" />
+            </div>
+            <div class="col-sm-3">
+                <div class="review-form__label">Кратко </div>
+            </div>
+            <div class="col-sm-9">
+                <input class="review-form__input" type="text" name="title" />
+            </div>
+            <div class="col-sm-3">
+                <div class="review-form__label">Отзыв </div>
+            </div>
+            <div class="col-sm-9">
+                <textarea class="review-form__textarea" name="text" cols='5' rows="3"></textarea>
+            </div>
+            <div class="col-sm-3 offset-sm-3">
+                <button class="review-form__submit">Отправить</button>
+            </div>
+        </div>
+    </div>
+</form>

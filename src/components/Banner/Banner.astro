@@ -1,0 +1,11 @@
+---
+    import "./banner.scss";
+    const {link, imgSrc} = Astro.props;
+---
+
+<div class="banner">
+    <a href={link} class="banner__link">
+        <img src={imgSrc} alt="" class="banner__image">
+    </a>
+    
+</div>

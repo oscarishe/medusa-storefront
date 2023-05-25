@@ -1,0 +1,22 @@
+---
+interface Props {
+    imgSrc: string;
+    name: string;
+    link: string;
+    count: number;
+}
+
+import "./popular-item.scss";
+
+const { imgSrc, name, link, count } = Astro.props;
+---
+
+<div class="swiper-slide">
+    <a href={link}>
+        <div class="popular-item">
+            <img src={imgSrc} alt={""} class="popular-item__image" />
+            <div class="popular-item__title">{name}</div>
+            <div class="popular-item__counter">{count} товаров</div>
+        </div>
+    </a>
+</div>

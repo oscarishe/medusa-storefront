@@ -1,0 +1,18 @@
+---
+import "./specification.scss";
+interface Props {
+    specification: any[];
+}
+const { specification } = Astro.props;
+---
+
+<table class="product-specification">
+    {
+        specification.map((item) => (
+            <tr class="product-specification__item">
+                <td class="product-specification__text">{item.name}</td>
+                <td class="product-specification__text">{item.value}</td>
+            </tr>
+        ))
+    }
+</table>

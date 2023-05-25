@@ -1,0 +1,52 @@
+.horizontal-menu {
+    display: flex;
+    column-gap: 40px;
+    height: 100%;
+    align-items: center;
+    position: relative;
+
+    &__item {
+        position: relative;
+        z-index: 5;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        &:hover .dropdown-hover-menu {
+            display: block;
+        }
+    }
+
+    &__link {
+        align-items: center;
+        font-size: 0.875em;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: 0.3s;
+        position: relative;
+
+        &:hover {
+            color: #3399FE;
+        }
+
+        &::before {
+            content: ' ';
+            position: absolute;
+            bottom: -13px;
+            width: 0%;
+            transition: 0.3s;
+            border-bottom: 2px solid #3399FE;
+            width: 100%;
+            transform: scaleX(0);
+        }
+
+        &:hover::before {
+            transform: scaleX(100%);
+        }
+    }
+
+    &__icon {
+        font-size: 0.625em;
+        margin-left: 5px;
+    }
+
+}

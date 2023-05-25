@@ -1,0 +1,13 @@
+
+<div class="products-swiper swiper">
+    <div class="swiper-wrapper">
+        <slot />
+    </div>
+</div>
+
+<script>
+    import initSwiper from './swiper';
+    import { mainSwiperConfig } from './config';
+    import "swiper/swiper-bundle.css";
+    initSwiper('.products-swiper', mainSwiperConfig);
+</script>

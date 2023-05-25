@@ -1,0 +1,36 @@
+---
+
+import { getMinPrice } from "../../../scripts/util/util";
+import { CartButton } from "../../Buttons/CartButton";
+import Grade from "../../Grade/Grade.astro";
+import "./product-item-card.scss";
+interface Props {
+    product: any;
+}
+
+const {handle, images, title, isOnSale } = Astro.props.product;
+const variantId = Astro.props.product.variants[0].id;
+const price = getMinPrice(Astro.props.product.variants);
+---
+
+<div class="product-item-card">
+    <div class="product-item-card__img-section">
+        <a class="product-item-card__img-link" href={`/products/${handle}`}>
+            <img src={images[0]?.url || '/assets/images/products/product1.jpg'} alt="" class="product-item-card__image" />
+        </a>
+        <a class="product-item-card__hidden-link" href={`/products/${handle}`}>
+            <i class="fa-regular fa-eye"></i>
+        </a>
+        {isOnSale && <div class="product-item-card__sticker">Акция!</div>}
+    </div>
+    <div class="product-item-card__title">{title}</div>
+    <div class="product-item-card__grade">
+        <Grade grade={5} />
+    </div>
+    <div class="product-item-card__price">
+        <span class="product-item-card__actual-price">от {price} р.</span>
+    </div>
+    <div class="product-item-card__hidden-section">
+        <CartButton variantId={variantId} className='' client:only />
+    </div>
+</div>

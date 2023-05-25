@@ -1,0 +1,20 @@
+---
+import { IReview } from "../../types/types";
+import ReviewForm from "./ReviewForm/ReviewForm.astro";
+import ReviewItem from "./ReviewItem/ReviewItem.astro";
+import './reviews.scss';
+interface Props {
+    reviews: IReview[];
+    product: string;
+}
+
+const { reviews, product } = Astro.props;
+---
+
+<div class="reviews">
+    <h3 class="reviews__title">Отзывы клиентов</h3>
+    <div class="reviews__container">
+        {reviews.map((item) => <ReviewItem review={item} />)}
+    </div>
+    <ReviewForm product={product} />
+</div>

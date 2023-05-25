@@ -1,0 +1,12 @@
+---
+export const prerender = true;
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.astro";
+import BlogsPageSection from "../../components/Sections/BlogsPageSection.astro";
+import Layout from "../../layouts/Layout.astro"
+import { blogs } from "../../../public/assets/js/data";
+---
+
+<Layout title="Блоги">
+    <Breadcrumbs currentPage="Блоги" title="Блоги"/>
+    <BlogsPageSection blogs={blogs}/>
+</Layout>

@@ -1,0 +1,41 @@
+---
+import { IReview } from '../../../types/types';
+import Grade from '../../Grade/Grade.astro';
+import './review-item.scss';
+
+interface Props {
+    review: IReview;
+}
+
+const { author, date, title, text, qualityGrade, deliveryGrade, priceGrade } = Astro.props.review;
+
+---
+
+<div class="review-item">
+    <div class="review-item__title">
+        { title }
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="review-item__grade">
+                <span>Качество</span>
+                <Grade grade = {qualityGrade} />
+            </div>
+            <div class="review-item__grade">
+                <span>Доставка</span>
+                <Grade grade = {deliveryGrade} />
+            </div>
+            <div class="review-item__grade">
+                <span>Цена</span>
+                <Grade grade = {priceGrade} />
+            </div>
+        </div>
+        <div class="col-md-9">
+            <p class="review-item__text mb-4">
+                {text}
+            </p>
+            <div class="review-item__text">Отзыв от <strong>{author}</strong></div>
+            <div class="review-item__text">Размещен {date}</div>
+        </div>
+    </div>
+</div>

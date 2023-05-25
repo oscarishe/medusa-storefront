@@ -1,0 +1,25 @@
+---
+import { dropdownProducts } from "../../../../public/assets/js/data";
+import DropdownMenu from "../DropdownMenu/DropdownMenu.astro";
+import "./horizontal-menu.scss";
+---
+
+<nav class="horizontal-menu">
+    <div class="horizontal-menu__item">
+        <a href="/" class="horizontal-menu__link">Главная</a>
+    </div>
+    <div class="horizontal-menu__item">
+        <a href="javascript:void(0)" class="horizontal-menu__link">Features</a>
+    </div>
+    <div class="horizontal-menu__item">
+        <a href="/products" class="horizontal-menu__link">Магазин</a>
+        <i class="horizontal-menu__icon fa-solid fa-chevron-down"></i>
+        <DropdownMenu products={dropdownProducts} direction="horizontal"/>
+    </div>
+    <div class="horizontal-menu__item">
+        <a href="/blogs" class="horizontal-menu__link">Блог</a>
+    </div>
+    <div class="horizontal-menu__item">
+        <a href="" class="horizontal-menu__link">Контакты</a>
+    </div>
+</nav>

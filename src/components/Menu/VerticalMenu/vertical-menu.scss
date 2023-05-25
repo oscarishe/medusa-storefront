@@ -1,0 +1,118 @@
+.vertical-menu {
+    position: relative;
+
+    &__header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #3399FE;
+        padding: 13px 0;
+        color: #FFF;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__text {
+        text-transform: uppercase;
+        font-size: 0.875em;
+        font-weight: 600;
+    }
+
+    &__icon {
+        margin-right: 7.5px;
+    }
+
+    &__open-button {
+        background: none;
+        border: none;
+        padding: 0;
+        outline: none;
+        color: #FFF;
+
+        i {
+            transition: 0.3s;
+        }
+
+        &.active i {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        transition: 0.2s;
+        height: 0;
+        visibility: hidden;
+        transform: scaleY(0) translateY(-50%);
+        z-index: 3;
+        &.active {
+            transition: 0.2s;
+            visibility: visible;
+            transform: scaleY(100%) translateY(0%);
+            height: 100%;
+        }
+    }
+    &__item {
+        width: 100%;
+        padding: 10px 20px;
+        transition: 0.2s;
+        height: 100%;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        background: #FFF;
+        &_dropdown {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > i {
+                font-size: 0.625em;
+            }
+        }
+
+        &.hidden {
+            height: 0;
+            padding: 0;
+            transition: 0.2s;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &:hover {
+            background: #3399FE;
+            border-color: #3399FE;
+        }
+
+
+        &_more-button {
+            border: 1px solid #ddd;
+        }
+
+        &:hover .dropdown-hover-menu {
+            display: block;
+        }
+
+
+    }
+
+    &__item:hover &__link,
+    &__item:hover &__icon {
+        color: #FFF;
+    }
+
+    &__link {
+        color: #444;
+
+        &_more-button {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__link-text {
+        font-size: 0.875em;
+    }
+
+}

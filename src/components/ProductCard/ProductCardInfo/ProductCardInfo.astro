@@ -1,0 +1,48 @@
+---
+import { getMinPrice, getOptions } from "../../../scripts/util/util";
+import Grade from "../../Grade/Grade.astro";
+import { ProductCardForm } from "../ProductCardForm/ProductCardForm";
+import "./product-card-info.scss";
+interface Props {
+    product: any;
+    reviewsCount: number;
+}
+const { number, title, variants, description } =
+    Astro.props.product;
+const { reviewsCount } = Astro.props;
+const variantId = Astro.props.product.variants[0].id;
+const price = getMinPrice(variants);
+const isAvailable = true;
+---
+
+<div class="product-info">
+    <h2 class="product-info__title">
+        {title}
+    </h2>
+    <div class="product-info__price">
+        <span class="product-info__actual-price">от {price} р.</span>
+    </div>
+    <div class="product-info__grade">
+        <Grade grade={5} />
+        <a class="product-info__link" href="#reviews" data-target="reviews">{reviewsCount} отзыва</a>
+        <a class="product-info__link" href="#reviews" data-target="reviews">Добавить отзыв</a>
+    </div>
+    {
+        isAvailable ? (
+            <div class="product-info__stock product-info__stock_available">
+                <i class="fa-solid fa-check" /> В наличии
+            </div>
+        ) : (
+            <div class="product-info__stock product-info__stock_unavailable">
+                Нет в наличии
+            </div>
+        )
+    }
+    <div class="product-info__number">
+        {number}
+    </div>
+    <p class="product-info__description">
+        {description}
+    </p>
+    <ProductCardForm variantId={variantId} client:only/>
+</div>

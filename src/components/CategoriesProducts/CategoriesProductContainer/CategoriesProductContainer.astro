@@ -1,0 +1,20 @@
+---
+import { IProduct } from "../../../types/types";
+import ProductItemCard from "../../ProductItem/ProductItemCard/ProductItemCard.astro";
+import ProductItemList from "../../ProductItem/ProductItemList/ProductItemList.astro";
+interface Props {
+    products: any[];
+    type: 'grid' | 'list';
+}
+
+const {products, type} = Astro.props;
+const containerClassname = `categories__container categories__container_${type}`;
+
+---
+
+<div class={containerClassname}>
+    <!-- {type === 'grid' && products.map((item) => <ProductItemCard product={item}/>)}
+    {type === 'list' && products.map((item) => <ProductItemList product={item}/>)} -->
+    {products.map((item) => <ProductItemCard product={item}/>)}
+    {products.map((item) => <ProductItemList product={item}/>)}
+</div>

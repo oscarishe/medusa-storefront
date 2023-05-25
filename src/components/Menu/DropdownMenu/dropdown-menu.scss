@@ -1,0 +1,39 @@
+.dropdown-hover-menu {
+    position: absolute;
+    display: none;
+    background: #FFF;
+    width: 100%;
+    padding: 15px 25px;
+    min-width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+
+    &__link {
+        font-size: 0.8125em;
+        margin-bottom: 8px;
+        color: #666;
+        margin-right: auto;
+
+        &_bold {
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #222;
+        }
+    }
+
+    &.vertical {
+        top: 1px;
+        left: 100%;
+    }
+
+    &.horizontal {
+        left: 1px;
+        top: 100%;
+    }
+    &.static {
+        position: static;
+        display: block;
+        min-width: 0;
+        box-shadow: none;
+        padding: 10px 0 0;
+    }
+}

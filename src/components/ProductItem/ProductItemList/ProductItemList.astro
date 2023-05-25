@@ -1,0 +1,35 @@
+---
+import './product-item-list.scss';
+import Grade from "../../Grade/Grade.astro";
+import { getMinPrice } from '../../../scripts/util/util';
+import { CartButton } from '../../Buttons/CartButton';
+interface Props {
+    product: any;
+}
+
+const {handle, images, title, description } = Astro.props.product;
+const variantId = Astro.props.product.variants[0].id;
+const price = getMinPrice(Astro.props.product.variants);
+---
+
+<div class="product-item-list">
+    <div class="row">
+        <div class="col-sm-4 col-12">
+            <a href={`/products/${handle}`}>
+            <img class="product-item-list__image" src={images[0]?.url || '/assets/images/products/product1.jpg'} alt="">
+        </a>
+        </div>
+        <div class="col-sm-8 col-12 d-flex flex-column">
+            <a href={`/products/${handle}`} class="product-item-list__title">{title}</a>
+            <Grade grade={5} />
+            <div class="product-item-list__price">
+                <span class="product-item-list__actual-price">от {price} р.</span>
+            </div>
+            <p class="product-item-list__description">
+                {description}
+            </p>
+            <CartButton variantId={variantId} className='product-item-list__button' client:only />
+        </div>
+
+    </div>
+</div>

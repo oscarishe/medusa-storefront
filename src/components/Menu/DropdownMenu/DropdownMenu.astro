@@ -1,0 +1,30 @@
+---
+import { IDropdownProducts } from "../../../types/types";
+import "./dropdown-menu.scss";
+interface Props {
+    products: IDropdownProducts[];
+    direction: string;
+    isStatic?: boolean;
+}
+
+const { products, direction, isStatic } = Astro.props;
+const className = (isStatic ? 'dropdown-hover-menu static ' : 'dropdown-hover-menu ') + direction;
+
+---
+
+<div class={className}>
+    <div class="row">
+        {
+            products.map((item) => (
+                <div class="col-lg-6 col-12 mb-3 d-flex flex-column">
+                    <a class="dropdown-hover-menu__link dropdown-hover-menu__link_bold" href={item.link}>
+                        {item.category}
+                    </a>
+                    {item.items.map((product) => (
+                        <a class="dropdown-hover-menu__link" href={`/products/${product.link}`}>{product.name}</a>
+                    ))}
+                </div>
+            ))
+        }
+    </div>
+</div>

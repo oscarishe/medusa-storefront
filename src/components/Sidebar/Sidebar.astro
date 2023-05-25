@@ -1,0 +1,19 @@
+---
+
+import "./sidebar.scss";
+interface Props {
+    title: string;
+    icon?: string;
+}
+let { title, icon } = Astro.props;
+---
+
+<div class="sidebar">
+    <div class="sidebar__header">
+        {icon && <i class={`sidebar__icon ${icon}`}></i> }
+        {title}
+    </div>
+    <div class="sidebar__content">
+        <slot />
+    </div>
+</div>

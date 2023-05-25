@@ -1,0 +1,29 @@
+.blog-search-form {
+    display: flex;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+
+    &__input {
+        border: 1px solid #bbb;
+        font-size: 0.875em;
+        color: #666;
+        padding: 0 9px;
+        background: #fff;
+        border-radius: 5px 0 0 5px;
+        height: 36px;
+        outline: none;
+        border-right:none;
+        width: 80%;
+    }
+
+    &__submit {
+        background: #222;
+        border: none;
+        color: #FFF;
+        width: 20%;
+        font-size: 0.75em;
+    }
+}

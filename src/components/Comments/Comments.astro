@@ -1,0 +1,46 @@
+---
+import CommentsItem from "./CommentsItem/CommentsItem.astro";
+import "./comments.scss";
+
+const response = await fetch('https://jsonplaceholder.typicode.com/albums?_limit=10');
+const comments = await response.json();
+
+---
+
+<div class="comments">
+    <div class="comments__title">{comments.length} Комментариев</div>
+    <form class="comments-form">
+        <textarea
+            class="comments-form__textarea"
+            name="comment"
+            placeholder="Ваш комментарий"></textarea>
+        <div class="comments-form__section d-none">
+            <div class="row">
+                <div class="col-sm-4">
+                    <input
+                        class="comments-form__input"
+                        type="text"
+                        name="name"
+                        placeholder="Имя"
+                    />
+                </div>
+                <div class="col-sm-4">
+                    <input
+                        class="comments-form__input"
+                        type="text"
+                        name="phone"
+                        placeholder="Номер телефона"
+                    />
+                </div>
+                <div class="col-sm-4 text-sm-end text-center">
+                    <button class="comments-form__submit" type="submit">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="comments-container">
+        {comments.map(item => <CommentsItem id={item.id} text={item.title}/>)}
+    </div>
+</div>
+
+<script src="./comments.js"></script>

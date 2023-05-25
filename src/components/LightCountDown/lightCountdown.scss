@@ -1,0 +1,41 @@
+.lightcountdown {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    &__container {
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    &__digits {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    &__digit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.125em;
+        min-width: 50px;
+        min-height: 40px;
+        border: 1px solid #3399FE;
+        border-radius: 5px;
+        color: #3399FE;
+    }
+
+    &__separator {
+        margin: 0 5px;
+    }
+
+    &__text {
+        color: #666666;
+        margin-top: 0.5em;
+        font-size: 0.8125em;
+        font-weight: 400;
+        text-align: center;
+    }
+}

@@ -1,0 +1,120 @@
+.blog-item {
+    display: flex;
+    flex-direction: column;
+
+    &__image {
+        max-width: 100%;
+        border-radius: 5px;
+        transition: 0.2s;
+        margin-bottom: 15px;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__title {
+        line-height: 1;
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 1.1875em;
+        order: 1;
+    }
+
+    &__info {
+        display: flex;
+        margin-bottom: 15px;
+        align-items: center;
+        order: 0;
+    }
+
+    &__date {
+        display: none;
+        font-size: 0.75em;
+        line-height: 1;
+        color: #999;
+        padding-right: 20px;
+        margin-right: 20px;
+        border-right: 1px solid #444;
+    }
+
+    &__author {
+        font-size: 0.75em;
+
+        span {
+            color: #3399FE;
+        }
+    }
+    &__author &__icon {
+        display: none;
+    }
+
+    &__author &__text {
+        color: #999;
+    }
+
+    &__icon {
+        margin-right: 5px;
+    }
+
+    &__description {
+        font-size: 0.875em;
+        color: #999;
+        order: 2;
+    }
+
+    &__link {
+        line-height: 1;
+        padding: 10px 20px;
+        border-radius: 4px;
+        color: #222;
+        font-size: 0.75em;
+        text-transform: uppercase;
+        column-gap: 7.5px;
+        border: 1px solid #ddd;
+        transition: 0.3s;
+        display: none;
+        order: 3;
+
+        &:hover {
+            background: #3399FE;
+            color: #FFF;
+        }
+    }
+
+    &_swiper {
+        .blog-item {
+            &__date {
+                display: block;
+            }
+
+            &__link {
+                display: inline-flex;
+                align-self: flex-start;
+            }
+
+            &__title {
+                font-size: 1em;
+                font-weight: 500;
+                order: 0;
+            }
+
+            &__info {
+                order: 1;
+            }
+
+            &__description {
+                color: #666666;
+            }
+
+            &__author {
+                .blog-item__icon {
+                    display: inline;
+                }
+                .blog-item__text {
+                    display: none;
+                }
+            }
+        }
+    }
+}

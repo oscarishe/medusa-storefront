@@ -1,0 +1,37 @@
+---
+import { blogSidebarLinks } from "../../../public/assets/js/data";
+import { IBlog } from "../../types/types";
+import BlogContent from "../BlogContent/BlogContent.astro";
+import BlogSearchForm from "../BlogSearchForm/BlogSearchForm.astro";
+import BlogSidebarList from "../BlogSidebarList/BlogSidebarList.astro";
+import Sidebar from "../Sidebar/Sidebar.astro";
+interface Props {
+    blog: IBlog;
+    maxId: number;
+    minId: number;
+}
+
+const { blog, maxId, minId } = Astro.props;
+---
+
+<section class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-md-8 col-12">
+                <BlogContent blog={blog} maxId = {maxId} minId={minId}/>
+            </div>
+            <div class="col-xl-3 col-md-4 col-12">
+                <BlogSearchForm />
+                <Sidebar title="Категории">
+                    <BlogSidebarList links={blogSidebarLinks} classes={['blog-sidebar-list_bordered']}/>
+                </Sidebar>
+                <Sidebar title="Категории">
+                    <BlogSidebarList links={blogSidebarLinks}/>
+                </Sidebar>
+                <Sidebar title="Категории">
+                    <BlogSidebarList links={blogSidebarLinks} classes={["fw-bold"]}/>
+                </Sidebar>
+            </div>
+        </div>
+    </div>
+</section>

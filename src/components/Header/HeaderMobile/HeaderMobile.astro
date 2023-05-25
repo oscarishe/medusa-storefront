@@ -1,0 +1,32 @@
+---
+
+import Cart from "../../Cart/Cart";
+import MobileMenu from "../MobileMenu/MobileMenu.astro";
+import "./header-mobile.scss";
+---
+
+<div class="header-mobile d-lg-none d-block">
+    <div class="header-mobile__top">
+        <button class="header-mobile__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a class="header-mobile__logo" href="/">
+            <img
+                src="/assets/images/header/logo-mobile.png"
+                alt=""
+                class="header-mobile__image"
+            />
+        </a>
+        <Cart client:only/>
+
+    </div>
+    <div class="header-mobile-form">
+        <input class="header-mobile-form__input" type="text" name="search" placeholder="Поиск по магазину">
+        <button class="header-mobile-form__submit" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+    <MobileMenu />
+</div>

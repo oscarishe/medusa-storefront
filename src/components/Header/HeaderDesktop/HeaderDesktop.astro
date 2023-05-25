@@ -1,0 +1,92 @@
+---
+import Cart from "../../Cart/Cart";
+import HorizontalMenu from "../../Menu/HorizontalMenu/HorizontalMenu.astro";
+import VerticalMenu from "../../Menu/VerticalMenu/VerticalMenu.astro";
+import SearchBar from "../../SearchBar/SearchBar.astro";
+import './header-desktop.scss';
+---
+
+<div class="header-desktop d-lg-block d-none">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div
+                        class="header-top__section header-top__section_separated"
+                    >
+                        <a class="header-top__link"
+                            >Welcome to Smartech online store</a
+                        >
+                        <a class="header-top__link"
+                            ><i class="header-top__icon fa-solid fa-truck"></i> Track
+                            your order</a
+                        >
+                        <a class="header-top__link"
+                            ><i class="header-top__icon fa-regular fa-envelope"
+                            ></i> info@example.com</a
+                        >
+                    </div>
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                    <div class="header-top__section">
+                        <a class="header-top__link" href=""
+                            ><i class="fa-brands fa-instagram"></i></a
+                        >
+                        <a class="header-top__link" href=""
+                            ><i class="fa-brands fa-telegram"></i></a
+                        >
+                        <a class="header-top__link" href=""
+                            ><i class="fa-brands fa-viber"></i></a
+                        >
+                        <a class="header-top__link" href=""
+                            ><i class="fa-brands fa-vk"></i></a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-container container">
+        <div class="row">
+            <div class="col-3">
+                <a href="/">
+                    <img src="/assets/images/header/logo.svg" alt="" />
+                </a>
+            </div>
+            <div class="col-4">
+                <SearchBar />
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <div class="header__contacts">
+                    <div>
+                        <i class="header__icon fa-solid fa-headset"></i>
+                    </div>
+                    <div>
+                        <div class="header__text">Горячая линия:</div>
+                        <a class="header__link fw-bold" href="tel:"
+                            >+375 29 111-11-11</a
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 d-flex justify-content-end align-items-end">
+                <Cart client:only />
+            </div>
+        </div>
+    </div>
+    <div class="header-navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <VerticalMenu />
+                </div>
+                <div class="col-xl-6 col-9">
+                    <HorizontalMenu />
+                </div>
+                <div class="col-3 d-xl-flex d-none align-items-center">
+                    <a href="" class="header-navigation__link"><i class="fa-regular fa-lightbulb"></i> SPECIAL SALE 30% OFF ON ALL ITEM</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+// const buttons = document.querySelectorAll('.cart__button');
+
+// buttons.forEach(button => {
+//     button.addEventListener('click', () => {
+//         button.nextElementSibling.classList.toggle('active');
+//     });
+// })

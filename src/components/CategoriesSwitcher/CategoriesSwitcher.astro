@@ -1,0 +1,23 @@
+---
+import './categories-switcher.scss';
+interface Props {
+    categories: any[];
+}
+
+const {categories} = Astro.props;
+---
+
+<div class="categories-switcher">
+    <div class="categories-switcher__container">
+        {categories.map((item, index) => (
+            <button class={"categories-switcher__button" + (index == 0 ? ' active' : '') } value={item.nandle}> {item.title}</button>
+        ))}
+    </div>
+    <select class="categories-switcher__select">
+        {categories.map((item) => (
+            <option value={item.nandle}> {item.title}</option>
+        ))}
+    </select>
+</div>
+
+<script src="./categoriesSwitcher.js"></script>

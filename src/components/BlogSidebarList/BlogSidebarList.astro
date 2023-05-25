@@ -1,0 +1,21 @@
+---
+import { ILink } from '../../types/types';
+import './blog-sidebar-list.scss';
+interface Props {
+    links: ILink[];
+    classes?: string[];
+}
+
+const { links, classes } = Astro.props;
+const listClassname = classes ? `blog-sidebar-list ${classes.join(' ')}` : 'blog-sidebar-list';
+---
+
+<ul class={listClassname}>
+    {
+        links.map((item) => (
+            <li class="blog-sidebar-list__item">
+                <a href={item.link} class="blog-sidebar-list__link">{item.text}</a>
+            </li>
+        ))
+    }
+</ul>

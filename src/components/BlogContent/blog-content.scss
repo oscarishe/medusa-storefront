@@ -1,0 +1,34 @@
+.blog-content {
+    &__header {
+        margin-bottom: 30px;
+    }
+    &__main {
+        margin-bottom: 30px;
+    }
+    &__info {
+        font-size: 0.75em;
+        font-weight: 400;
+        color: #999;
+        margin-right: 10px;
+
+        &_author {
+            color: #3399FE;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+    &__text {
+        font-size: 0.875em;
+        color: #666666;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+    &__link {
+        color: #444444;
+        font-size: 0.875em;
+    }
+}

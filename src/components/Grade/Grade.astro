@@ -1,0 +1,15 @@
+---
+import './grade.scss';
+
+interface Props {
+    grade: number;
+    isEmptyStars?: boolean;
+}
+
+const { grade, isEmptyStars } = Astro.props;
+const maxGrade = isEmptyStars ? new Array(grade).fill(1) : new Array(5).fill(1);
+---
+
+<div class="grade">
+    {maxGrade.map((item, index) => index < grade ? <i class="fa-solid fa-star marked"></i> : <i class="fa-solid fa-star"></i>)}
+</div>

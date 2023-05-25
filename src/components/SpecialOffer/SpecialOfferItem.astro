@@ -1,0 +1,51 @@
+---
+import CarouselPagination from "../Carousel/CarouselPagination.astro";
+import Grade from "../Grade/Grade.astro";
+import LightCountDown from "../LightCountDown/LightCountDown.astro";
+import "./special-offer-item.scss";
+
+interface Props {
+    link: string;
+    images: string[];
+    title: string;
+    price: number;
+    oldPrice?: number;
+    grade: number;
+    description: string;
+}
+
+const { link, images, title, price, oldPrice, grade, description } =
+    Astro.props;
+---
+
+<div class="special-offer">
+    <div class="row">
+        <div class="col-md-7 col-12 mb-3">
+            <CarouselPagination images={images} isControlsActive={false} paginationType="vertical"/>
+        </div>
+        <div class="col-md-5 col-12">
+            <a class="special-offer__title" href={link}>{title}</a>
+            <div class="special-offer__price">
+                <span class="special-offer__actual-price">{price} р.</span>
+                {
+                    oldPrice ? (
+                        <span class="special-offer__old-price">
+                            {oldPrice} р.
+                        </span>
+                    ) : (
+                        ""
+                    )
+                }
+            </div>
+            <Grade grade={grade} />
+            <p class="special-offer__description">
+                {description}
+            </p>
+            <button class="special-offer__button">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Добавить в корзину
+            </button>
+            <LightCountDown />
+        </div>
+    </div>
+</div>

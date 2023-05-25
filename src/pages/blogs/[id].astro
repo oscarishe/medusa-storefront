@@ -1,0 +1,23 @@
+---
+export const prerender = true;
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.astro";
+import Layout from "../../layouts/Layout.astro"
+import { blogs } from "../../../public/assets/js/data";
+import Blog from "../../components/Sections/Blog.astro";
+
+export async function getStaticPaths() {
+    return blogs.map((blog) => ({
+        params: { id: blog.id.toString() },
+        props: { blog },
+    }));
+}
+const ids = blogs.map(item => item.id);
+const maxId = Math.max(...ids);
+const minId = Math.min(...ids);
+const { blog } = Astro.props;
+---
+
+<Layout title="Блоги">
+    <Breadcrumbs currentPage="Блоги" title="Блоги"/>
+    <Blog blog={blog} maxId = {maxId} minId = {minId}/>
+</Layout>

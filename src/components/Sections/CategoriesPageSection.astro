@@ -1,0 +1,25 @@
+---
+import CategoriesProducts from "../CategoriesProducts/CategoriesProducts.astro";
+import Filters from "../Filters/Filters.astro";
+import ProductSidebarContent from "../ProductSidebar/ProductSidebarContent.astro";
+import Sidebar from "../Sidebar/Sidebar.astro";
+
+---
+
+<section class="categories">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-12 order-md-0 order-1">
+                <Sidebar title="Фильтры" icon="fa-solid fa-filter">
+                    <Filters />       
+                </Sidebar>
+                <Sidebar title="Товары для сравнения">
+                    <ProductSidebarContent products={[]} />
+                </Sidebar>
+            </div>
+            <div class="col-lg-9 col-md-8 col-12 order-md-1 order-0">
+                <CategoriesProducts />
+            </div>
+        </div>
+    </div>
+</section>

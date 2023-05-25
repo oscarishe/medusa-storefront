@@ -1,0 +1,96 @@
+.carousel_pagination {
+    .carousel-item {
+        text-align: center;
+        border-radius: 5px;
+        height: 100%;
+
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .carousel-indicators {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        height: 100%;
+        margin: 0;
+        column-gap: 10px;
+        row-gap: 10px;
+
+        &.vertical {
+            flex-direction: row;
+
+            @media (min-width:576px) {
+                flex-direction: column;
+            }
+        }
+
+        button {
+            width: 100%;
+            height: auto;
+            background: transparent;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: 0.3s;
+            padding: 0;
+            overflow: hidden;
+
+            &.active {
+                border-color: #3399FE;
+            }
+
+            &:hover {
+                border-color: #3399FE;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 120px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &.horizontal {
+        .carousel-item {
+            border: 1px solid #ddd;
+        }
+    }
+
+    .carousel-content {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        &:hover .carousel-control-next,
+        &:hover .carousel-control-prev {
+            transform: translateX(0px);
+        }
+    }
+    
+    .carousel-inner {
+        height: 100%;
+    }
+
+    .carousel-buttons {
+
+        .carousel-control-next,
+        .carousel-control-prev {
+            color: #666666;
+            font-size: 40px;
+            transition: 0.3s;
+        }
+
+        .carousel-control-next {
+            transform: translateX(100px);
+        }
+
+        .carousel-control-prev {
+            transform: translateX(-100px);
+        }
+    }
+}

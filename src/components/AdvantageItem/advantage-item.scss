@@ -1,0 +1,22 @@
+.advantage-item {
+    font-size: 0.875em;
+
+    &__image {
+        max-width: 100%;
+        transition: 0.3s;
+        &:hover {
+            border-radius: 50%;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
+        color: #666666;
+        line-height: 1;
+    }
+}

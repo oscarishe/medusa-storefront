@@ -1,0 +1,18 @@
+---
+import { socialIcons } from '../../../public/assets/js/data';
+import './social-link.scss';
+
+interface Props {
+    link: string;
+    social: string;
+    modifier?: string;
+}
+
+const { link, social, modifier} = Astro.props;
+const iconClass = socialIcons[social];
+const linkClass = `social-link social-link_${social}` + (modifier ? ` social-link_${modifier}` : '');
+---
+
+<a href={link} class={linkClass}>
+    <i class={iconClass}></i>
+</a>

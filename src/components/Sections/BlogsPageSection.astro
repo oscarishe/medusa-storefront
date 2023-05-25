@@ -1,0 +1,52 @@
+---
+import { blogSidebarLinks } from "../../../public/assets/js/data";
+import { IBlog } from "../../types/types";
+import BlogItem from "../BlogItem/BlogItem.astro";
+import BlogSearchForm from "../BlogSearchForm/BlogSearchForm.astro";
+import BlogSidebarList from "../BlogSidebarList/BlogSidebarList.astro";
+import Sidebar from "../Sidebar/Sidebar.astro";
+
+interface Props {
+    blogs: IBlog[];
+}
+
+const { blogs } = Astro.props;
+---
+
+<section class="blogs">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-md-8 col-12">
+                <div class="row">
+                    {
+                        blogs.map((item) => (
+                            <div class="col-xl-4 col-sm-6 col-12 mb-4">
+                                <BlogItem
+                                    id={item.id}
+                                    imgSrc={item.imgSrc}
+                                    imgAlt={item.imgAlt}
+                                    author={item.author}
+                                    title={item.title}
+                                    date={item.date}
+                                    description={item.description}
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-4 col-12">
+                <BlogSearchForm />
+                <Sidebar title="Категории">
+                    <BlogSidebarList links={blogSidebarLinks} classes={['blog-sidebar-list_bordered']}/>
+                </Sidebar>
+                <Sidebar title="Категории">
+                    <BlogSidebarList links={blogSidebarLinks}/>
+                </Sidebar>
+                <Sidebar title="Категории">
+                    <BlogSidebarList links={blogSidebarLinks} classes={["fw-bold"]}/>
+                </Sidebar>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+.swiper-navigation {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    column-gap: 5px;
+    padding: 0;
+
+    .swiper-nav {
+        background: none;
+        width: 35px;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        font-size: 0.875em;
+        cursor: pointer;
+    }
+}

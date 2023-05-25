@@ -1,0 +1,20 @@
+---
+import Banner from "../Banner/Banner.astro";
+import Carousel from "../Carousel/Carousel.astro";
+---
+
+<section class="main">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-3 col-lg-7 col-md-9 col-12">
+                <Carousel />
+            </div>
+            <div class="col-lg-2 col-3 d-md-block d-none text-center">
+                <div class="banner-container">
+                    <Banner link="#" imgSrc="/assets/images/main/banner1.jpg" />
+                    <Banner link="#" imgSrc="/assets/images/main/banner1.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
